@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Taskify.ModelViews;
 
 namespace Taskify.Controllers
 {
@@ -12,9 +13,13 @@ namespace Taskify.Controllers
     {
 
         [HttpGet]
-        public string Index()
+        public HomeView Index()
         {
-            return "Hello, World!";
+            return new HomeView
+            {
+                Message = "Welcome to the Task API",
+                Documentation = "/swagger"
+            };
         }
     }
 }
