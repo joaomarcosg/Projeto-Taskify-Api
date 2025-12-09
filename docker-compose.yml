@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${TASKIFY_DATABASE_USER}
+      POSTGRES_PASSWORD: ${TASKIFY_DATABASE_PASSWORD}
+      POSTGRES_DB: ${TASKIFY_DATABASE_NAME}
+    ports:
+      - ${TASKIFY_DATABASE_PORT:-5432}:5432
+    volumes:
+     - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
