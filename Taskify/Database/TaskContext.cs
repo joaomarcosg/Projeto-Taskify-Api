@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Taskify.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Taskify.Database
