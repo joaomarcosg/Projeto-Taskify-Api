@@ -10,7 +10,7 @@ var database = Environment.GetEnvironmentVariable("TASKIFY_DATABASE_NAME");
 var userName = Environment.GetEnvironmentVariable("TASKIFY_DATABASE_USER");
 var password = Environment.GetEnvironmentVariable("TASKIFY_DATABASE_PASSWORD");
 
-var connectionString = $"Host={host};Port{port};Database={database};UserName={userName};Password={password};";
+var connectionString = $"Host={host};Port={port};Database={database};Username={userName};Password={password};";
 
 builder.Services.AddDbContext<TaskContext>(options =>
     options.UseNpgsql(connectionString));
